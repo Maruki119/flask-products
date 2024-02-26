@@ -100,7 +100,8 @@ export default function Product() {
             
             <div>
                 <h1>Update Products </h1>
-                <h2>Click (OK) for select update data</h2>
+                <h2>Click (OK) for select update data and input data</h2>
+                <h2>Then Click (OK) Again for confirm</h2>
                 Product Name: <input type = "text" name ="product_name" ref = {update_product1}/>
                 Price: <input type = "text" name = "product_price" ref = {update_product2}/>
                 img: <input type = "text" name = "product_img" ref = {update_product3}/>

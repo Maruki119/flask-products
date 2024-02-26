@@ -58,6 +58,7 @@ def add_product():
         if already_data:
             return jsonify({"error":"Cannot create product"})
         products_collection.insert_one(data)
+        return jsonify(data), 200
     except Exception as e:
         return jsonify({"error": str(e)})
     
