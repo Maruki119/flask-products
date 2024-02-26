@@ -55,7 +55,7 @@ def add_product():
     try:
         data = request.get_json()
         already_data = products_collection.find_one({"_id": data.get("_id")})
-        if(already_data):
+        if already_data:
             return jsonify({"error":"Cannot create product"})
         products_collection.insert_one(data)
     except Exception as e:
