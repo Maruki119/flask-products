@@ -87,29 +87,50 @@ export default function Product() {
     if (!product) return null;
 
     return (
-        <div>
-            <div>
-                <h1>Add Products</h1>
+        <div style = {{ textAlign: "center" }}>
+            <div style = {{ margin: "20px auto", maxWidth: "600px" }}>
+                <h1>Add Product</h1>
                 <div>{message && <p>{message}</p>}</div>
-                _id: <input type = "number" name = "product_id" ref = {product1}/>
-                Product Name: <input type = "text" name ="product_name" ref = {product2}/>
-                Price: <input type = "text" name = "product_price" ref = {product3}/>
-                img: <input type = "text" name = "product_img" ref = {product4}/>
-                <button onClick = {onAddProduct}>Add Product</button>
+                    <div>
+                        <label htmlFor = "product_id">ID:</label>
+                        <input type = "number" id = "product_id" ref = {product1} />
+                    </div>
+                    <div>
+                        <label htmlFor = "product_name">Product Name:</label>
+                        <input type = "text" id = "product_name" ref = {product2} />
+                    </div>
+                    <div>
+                        <label htmlFor = "product_price">Price:</label>
+                        <input type = "text" id="product_price" ref = {product3} />
+                    </div>
+                    <div>
+                        <label htmlFor = "product_img">Image URL:</label>
+                        <input type = "text" id = "product_img" ref = {product4} />
+                    </div>
+                <button onClick={onAddProduct}>Add Product</button>
             </div>
-            
-            <div>
-                <h1>Update Products </h1>
-                <h2>Click (OK) for select update data and input data</h2>
-                <h2>Then Click (OK) Again for confirm</h2>
-                Product Name: <input type = "text" name ="product_name" ref = {update_product1}/>
-                Price: <input type = "text" name = "product_price" ref = {update_product2}/>
-                img: <input type = "text" name = "product_img" ref = {update_product3}/>
+
+            <div style = {{ margin: "20px auto", maxWidth: "600px" }}>
+                <h1>Update Product</h1>
+                <h2>Select a product to update</h2>
+                <div>
+                    <label htmlFor="update_product_name">Product Name:</label>
+                    <input type = "text" id="update_product_name" ref = {update_product1} />
+                </div>
+                <div>
+                    <label htmlFor="update_product_price">Price:</label>
+                    <input type = "text" id="update_product_price" ref = {update_product2} />
+                </div>
+                <div>
+                    <label htmlFor = "update_product_img">Image URL:</label>
+                    <input type = "text" id = "update_product_img" ref = {update_product3} />
+                </div>
             </div>
-            <h1>Product</h1>
-            <ul>
-                {productList}
-            </ul>
+
+            <div style={{ margin: "20px auto", maxWidth: "800px" }}>
+                <h1>Products</h1>
+                <ul style={{ listStyleType: "none", padding: 0 }}>{productList}</ul>
+            </div>
         </div>
     );
 }
